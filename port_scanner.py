@@ -1,6 +1,10 @@
-
-# A port scanner developed by Srce Cde
-
+"""
+Mini Python Port Scanner
+========================
+Developed by: Chirag Rathod (Srce Cde)
+Email: chiragr83@gmail.com
+========================
+"""
 import pslib
 import tkinter as tk
 from tkinter import *
@@ -19,7 +23,7 @@ class PortScanner(tk.Tk):
 
         tk.Tk.__init__(self, *args, **kwargs)
 
-        # tk.Tk.iconbitmap(self, bitmap="@/home/Desktop/Python/Git Clone/python-port-scanner/icon2.png")
+        tk.Tk.iconbitmap(self, bitmap="icon.ico")
 
         tk.Tk.wm_title(self, "Mini Port Scanner")
 
@@ -30,7 +34,7 @@ class PortScanner(tk.Tk):
 
         menubar = tk.Menu(container)
         filemenu = tk.Menu(menubar, tearoff=1)
-        filemenu.add_command(label="Important Ports", command=lambda: popupmessageInfo("Yet to come!"))
+        filemenu.add_command(label="Important Ports", command=lambda: pslib.popupmessageInfo("Yet to come!"))
         filemenu.add_command(label="Exit", command=quit, accelerator="Ctrl+Q")
 
         menubar.add_cascade(label="File", menu=filemenu)
@@ -116,6 +120,9 @@ class PortScannerUI(tk.Frame, PortScanner):
                         result_text.insert(END, op)
             fc = open('out.txt', 'w').truncate()
 
+def quit():
+    quit()
+
 
 class ImpPort(tk.Frame):
 
@@ -125,7 +132,7 @@ class ImpPort(tk.Frame):
 
 
 ps = PortScanner()
-ps.geometry("720x400")
-# ps.wm_iconbitmap(bitmap="@/icon.ico")
+ps.geometry("800x400")
+#ps.wm_iconbitmap(bitmap="@/icon.ico")
 ps.resizable(0, 0)
 ps.mainloop()

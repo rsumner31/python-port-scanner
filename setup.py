@@ -1,6 +1,10 @@
-
-# Created by Srce Cde
-
+"""
+Mini Python Port Scanner
+========================
+Developed by: Chirag Rathod (Srce Cde)
+Email: chiragr83@gmail.com
+========================
+"""
 import cx_Freeze
 import sys
 

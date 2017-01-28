@@ -1,7 +1,9 @@
-
-# Created by Srce Cde
-
 """
+Mini Python Port Scanner
+========================
+Developed by: Chirag Rathod (Srce Cde)
+Email: chiragr83@gmail.com
+========================
 You can also use this file as import whie creating Port Scanner application
 I have created this file by keeping in mind that other can also import this
 file and use it.
@@ -57,7 +59,8 @@ def popupmessageInfo(msg):
 
 def check_con():
     hostname = "google.com"
-    con = os.system("ping -c 1 " + hostname)
+    #con = os.system("ping -c 1 " + hostname)#For linux
+    con = os.system("ping " + hostname + " -n 1") #for Windows
     if con == 0:
         return True
     else:
