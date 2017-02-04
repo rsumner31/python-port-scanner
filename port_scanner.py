@@ -73,6 +73,9 @@ class PortScannerUI(tk.Frame, PortScanner):
         enter_host.grid(row=1, column=0, columnspan=1, sticky="w", padx=35, pady=20)
         enter_host.bind("<Control-KeyRelease-a>", lambda: ttk.enter_host.select_range(0, END))
 
+        demo_host = tk.Label(parent, text="For ex. http://www.portscan.com", font=NORMAL_FONT)
+        demo_host.grid(row=0, rowspan=5, column=1, sticky="nw")
+        
 
         host_entry = tk.Entry(parent, text="get", width=40)
         host_entry.grid(row=1, column=1, sticky="w", padx=0)
