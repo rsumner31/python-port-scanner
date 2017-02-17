@@ -67,7 +67,7 @@ def check_con():
         return False
 
 
-class run_scn_thread:
+class RunScanThread:
 
     def run_scan(self):
         global write_result

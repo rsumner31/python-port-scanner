@@ -75,7 +75,7 @@ class PortScannerUI(tk.Frame, PortScanner):
 
         demo_host = tk.Label(parent, text="For ex. http://www.portscan.com", font=NORMAL_FONT)
         demo_host.grid(row=0, rowspan=5, column=1, sticky="nw")
-        
+
 
         host_entry = tk.Entry(parent, text="get", width=40)
         host_entry.grid(row=1, column=1, sticky="w", padx=0)
@@ -122,6 +122,7 @@ class PortScannerUI(tk.Frame, PortScanner):
                         op = "Port {} is open for {}".format(line, pslib.TARGET) + "\n"
                         result_text.insert(END, op)
             fc = open('out.txt', 'w').truncate()
+
 
 def quit():
     quit()
