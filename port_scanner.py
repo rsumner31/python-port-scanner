@@ -76,7 +76,6 @@ class PortScannerUI(tk.Frame, PortScanner):
         demo_host = tk.Label(parent, text="For ex. http://www.portscan.com", font=NORMAL_FONT)
         demo_host.grid(row=0, rowspan=5, column=1, sticky="nw")
 
-
         host_entry = tk.Entry(parent, text="get", width=40)
         host_entry.grid(row=1, column=1, sticky="w", padx=0)
 
@@ -89,7 +88,7 @@ class PortScannerUI(tk.Frame, PortScanner):
         load_data = tk.Button(parent, text="Load Result", command=lambda: l_text())
         load_data.grid(row=3, column=8, sticky="w", padx=0)
 
-        scroll= tk.Scrollbar(parent)
+        scroll = tk.Scrollbar(parent)
         result_text = tk.Text(parent, width=75, height=15)
 
         scroll.grid(row=3, rowspan=7, column=2, columnspan=3, sticky="nse", pady=20, padx=1)
@@ -114,10 +113,9 @@ class PortScannerUI(tk.Frame, PortScanner):
                     pass
                 else:
                     f2 = open('out.txt', 'r').read()
-                    fr = f2.replace("[","").replace("]", "")
+                    fr = f2.replace("[", "").replace("]", "")
 
                     xL = fr.split(", ")
-                    ins = []
                     for line in xL:
                         op = "Port {} is open for {}".format(line, pslib.TARGET) + "\n"
                         result_text.insert(END, op)
@@ -137,6 +135,6 @@ class ImpPort(tk.Frame):
 
 ps = PortScanner()
 ps.geometry("800x400")
-#ps.wm_iconbitmap(bitmap="@/icon.ico")
+# ps.wm_iconbitmap(bitmap="@/icon.ico")
 ps.resizable(0, 0)
 ps.mainloop()
