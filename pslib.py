@@ -42,7 +42,7 @@ def scn_me(parms, all_port_chk):
                 popupmessageErr("No Internet connection")
         else:
             open("out.txt", "w").close
-            rst = run_scn_thread()
+            rst = RunScanThread()
             t2 = threading.Thread(target=(rst.run_scan))
             t2.start()
 
